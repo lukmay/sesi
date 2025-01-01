@@ -1,49 +1,142 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="de">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>My GitHub Page</title>
+  <title>Frohe Weihnachten!</title>
   <style>
     body {
-      font-family: Arial, sans-serif;
+      font-family: 'Courier New', Courier, monospace;
       text-align: center;
       margin: 0;
       padding: 0;
-      background-color: #f4f4f9;
-      color: #333;
+      background-color: #002b36;
+      color: #fff;
+      background-image: url('https://www.transparenttextures.com/patterns/stardust.png');
+      overflow: hidden;
     }
     header {
-      background: #0078d7;
+      background: linear-gradient(45deg, #b22222, #ff4500);
       color: #fff;
       padding: 20px 0;
+      animation: fade-in 2s ease-in-out;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
     }
     header h1 {
       margin: 0;
+      font-size: 3em;
+      font-family: 'Brush Script MT', cursive;
+      text-shadow: 2px 2px #000;
     }
     main {
       padding: 20px;
+      overflow-y: auto;
+      display: none;
     }
     footer {
-      background: #222;
+      background: #111;
       color: #fff;
       padding: 10px 0;
-      position: fixed;
       width: 100%;
-      bottom: 0;
+      text-align: center;
+      font-size: 0.9em;
+      border-top: 1px solid #444;
+      display: none;
+    }
+    .gift-wrapper {
+      position: fixed;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: 300px;
+      height: 300px;
+      background: url('https://th.bing.com/th/id/R.a87cc347e73a336112526e9d33239ea8?rik=cCbZNfkUnKjOaQ&riu=http%3a%2f%2fwww.clipartbest.com%2fcliparts%2f4Tb%2fLog%2f4TbLogd4c.png&ehk=A%2bQEThW9S%2fGemDAA8Gc3sL8cazLe%2fBR0ILLoDWgY1gs%3d&risl=1&pid=ImgRaw&r=0') no-repeat center;
+      background-size: cover;
+      animation: bounce 1s infinite;
+      cursor: pointer;
+    }
+    .image-container {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 150px;
+      margin-top: 20px;
+      animation: slide-up 2s ease-in-out;
+    }
+    .image-container img {
+      border-radius: 20px;
+      transition: transform 0.3s, box-shadow 0.3s;
+      object-fit: contain;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+    }
+    .image-container img:hover {
+      transform: scale(1.1);
+      box-shadow: 0 8px 16px rgba(0, 0, 0, 0.8);
+    }
+    .image-container .gif {
+      width: 250px;
+      height: auto;
+    }
+    .image-container .small-img {
+      width: 150px;
+      height: auto;
+    }
+    .image-container .medium-img {
+      width: 300px;
+      height: auto;
+    }
+    .image-container .large-img {
+      width: 400px;
+      height: auto;
+    }
+    p {
+      font-size: 1.5em;
+      font-style: italic;
+      margin-bottom: 20px;
+    }
+
+    @keyframes fade-in {
+      from { opacity: 0; }
+      to { opacity: 1; }
+    }
+
+    @keyframes slide-up {
+      from { transform: translateY(20px); opacity: 0; }
+      to { transform: translateY(0); opacity: 1; }
+    }
+
+    @keyframes bounce {
+      0%, 20%, 50%, 80%, 100% { transform: translate(-50%, -50%) scale(1); }
+      40% { transform: translate(-50%, -48%) scale(1.1); }
+      60% { transform: translate(-50%, -52%) scale(1.05); }
     }
   </style>
+  <script>
+    function openGift() {
+      document.querySelector('.gift-wrapper').style.display = 'none';
+      document.querySelector('main').style.display = 'block';
+      document.querySelector('footer').style.display = 'block';
+      document.body.style.overflow = 'auto';
+    }
+  </script>
 </head>
 <body>
+  <div class="gift-wrapper" onclick="openGift()"></div>
   <header>
-    <h1>Welcome to My GitHub Page</h1>
+    <h1>Frohe Weihnachten!</h1>
   </header>
   <main>
-    <p>This is a simple webpage hosted using GitHub Pages.</p>
-    <p>Edit <code>index.html</code> in your repository to customize this page!</p>
+    <p>Ich wünsche dir frohe Weihnachten und hoffentlich viel Freude an diesem Geschenk:) </p>
+    <div class="image-container">
+      <img src="https://i.giphy.com/media/v1.Y2lkPTc5MGI3NjExZmFjNjBtaDFyc203cHBxZXAzYjVqMWpndnNlYnI0NDlvdzhkcTJwaSZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/3o6fJdYXEvMa5ZmlI4/giphy.gif" alt="Christmas GIF" class="gif">
+      <img src="https://help.prusa3d.com/wp-content/uploads/2023/12/101790f338330f62ce9c8b23971243a6.jpg" alt="Weihnachtsbild 1" class="large-img">
+      <img src="https://th.bing.com/th/id/R.498ef2ad4c69fb6bccba9a527c14bea6?rik=I1X2c4ItO7o97w&pid=ImgRaw&r=0" alt="Weihnachtsbild 2" class="medium-img">
+      <img src="https://th.bing.com/th/id/OIP.eAHMcS0IN0xZMdyLtkRRmwHaFu?rs=1&pid=ImgDetMain" alt="Weihnachtsbild 3" class="small-img">
+      <img src="https://cdn.thingiverse.com/assets/04/a4/f8/54/01/large_display_00.jpg" alt="Weihnachtsbaum Modell" class="medium-img">
+    </div>
   </main>
   <footer>
-    <p>&copy; 2025 My GitHub Page</p>
+    <p>&copy; 2025 Schönste Frau der Welt</p>
   </footer>
 </body>
 </html>
